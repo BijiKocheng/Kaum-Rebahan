@@ -16,18 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../bootstra/style.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
 </head>
 <body>
 <div class="jumbotron">
   <h1 class="display-4">Hello, <?= $_SESSION['username']; ?>!</h1>
-    <?php if($_SESSION['level'] == 'admin') : ?>
-        <a href="dashboard.php">Dashboard</a>
-    <?php endif; ?>
   <hr class="my-4">
   <p><?php print_r($_SESSION);   ?></p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="../config/logout.php" role="button">logout</a>
+    <a class="btn btn-danger btn-lg" href="../config/logout.php" role="button">logout</a>
+    <?php if($_SESSION['level'] == 'admin') : ?>
+        <a href="dashboard.php" class="btn btn-primary btn-lg">Dashboard</a>
+    <?php endif; ?>
   </p>
 </div>
 </body>
