@@ -26,6 +26,23 @@ $no = 1;
 
 ?>
 
+<?php 
+
+if (isset($_POST['search_submit'])) {
+
+$search = $_POST['search'];
+$query = mysqli_query($conn2, "SELECT * FROM users where
+        username like '%$search%' OR
+        email like '%$search%' OR
+        password like '%$search%' OR
+        level like '%$search%'");
+
+}
+
+
+
+?>
+
 <?php include "../admin-templates/header.php"; ?>
 
 <div class="row">
@@ -35,16 +52,16 @@ $no = 1;
         <h3 class="card-title">Data Table User</h3>
 
         <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 200px;">
-            <input type="text" name="table_search" autocomplete="off" autofocus class="form-control float-right" placeholder="Search">
-
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                <i class="fas fa-search"></i>
-                </button>
-            </div>
-            </div>
+            <form action="" method="post">
+                <div class="input-group input-group-sm" style="width: 200px;">
+                <input type="text" name="search" autocomplete="off" autofocus class="form-control float-right" placeholder="Search Data">
+                <div class="input-group-append">
+                    <input type="submit" value="Search" name="search_submit" class="btn btn-primary">
+                </div>
+                </div>
+            </form>
         </div>
+        
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0 table-hover" style="height: 300px;">
