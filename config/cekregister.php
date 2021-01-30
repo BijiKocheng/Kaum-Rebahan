@@ -6,9 +6,9 @@ function insert($data){
 
     global $conn2;
     
-    $username = htmlspecialchars($data['username']);
+    $username = strtolower(htmlspecialchars($data['username']));
     $email = htmlspecialchars($data['email']);
-    $option = ['cost' => 10];
+    // $option = ['cost' => 10];
     // $password = password_hash($data['password'], PASSWORD_DEFAULT, $option);
     $password = htmlspecialchars($data['password']);
     $level = "member";

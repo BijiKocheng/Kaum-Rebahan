@@ -88,7 +88,7 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
                 <td><b><?= $data['level']; ?></b></td>
                 <td>
                     <a href="edit.php?id=<?= $data['id']; ?>" class="btn btn-primary">Edit</a>
-                    <a href="delete.php?id=<?= $data['id']; ?>" class="btn btn-danger">Delete</a>
+                    <a href="../config/delete.php?id=<?= $data['id'];?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             <?php $no++; ?>
