@@ -69,9 +69,8 @@ if (isset($_POST['submit'])) {
     <div class="form-group">
         <label for="level">Level</label>
         <select class="custom-select" name="level" id="level">
-            <option selected>Select Level Member</option>
-            <option value="admin">Admin</option>
             <option value="member">Member</option>
+            <option value="admin">Admin</option>
         </select>
     </div>
     <input type="submit" value="submit" name="submit" class="btn btn-primary">
