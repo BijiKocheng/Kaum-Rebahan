@@ -72,7 +72,6 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
                 <th>ID</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Level</th>
                 <th>Option</th>
             </tr>
@@ -84,7 +83,6 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
                 <td><?= $data['id']; ?></td>
                 <td><?= $data['username']; ?></td>
                 <td><?= $data['email']; ?></td>
-                <td><?= $data['password']; ?></td>
                 <td><b><?= $data['level']; ?></b></td>
                 <td>
                     <a href="edit.php?id=<?= $data['id']; ?>" class="btn btn-primary">Edit</a>

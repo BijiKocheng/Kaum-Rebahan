@@ -21,9 +21,9 @@ if ($_SESSION['level'] != "admin") {
   </script>";
   
 }
-
-    $d = $_GET['id'];    
-    $sql = "SELECT * FROM users where id = '$d'";
+    
+    $id = $_GET['id'];    
+    $sql = "SELECT * FROM users where id = '$id'";
     $query = mysqli_query($conn2, $sql);
     $data = mysqli_fetch_assoc($query);
 
@@ -32,7 +32,9 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $option = ['cost' => 10];
+    $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT, $option);
+    $password = $password_hash;
     $level = $_POST['level'];
 
     $sql = "UPDATE users SET id = '$id', username = '$username', email = '$email', password = '$password', level = '$level' WHERE id ='$id'";
