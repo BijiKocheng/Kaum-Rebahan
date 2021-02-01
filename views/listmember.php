@@ -52,14 +52,6 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
         <h3 class="card-title">Data Table User</h3>
 
         <div class="card-tools">
-            <!-- <form action="" method="post">
-                <div class="input-group input-group-sm" style="width: 200px;">
-                <input type="text" name="search" autocomplete="off" autofocus class="form-control float-right" placeholder="Search Data">
-                <div class="input-group-append">
-                    <input type="submit" value="Search" name="search_submit" class="btn btn-primary">
-                </div>
-                </div>
-            </form> -->
             <form action="" method="post" class="form-inline my-2 my-lg-0">
                 <input class="form-control form-control-sm mr-sm-2" type="search" name="search" autofocus autocomplete="off" placeholder="Search Data" aria-label="Search">
                 <button class="btn btn-sm btn-outline-success my-2 my-sm-0" name="search_submit" type="submit">Search</button>
