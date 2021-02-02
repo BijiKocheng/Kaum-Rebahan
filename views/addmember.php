@@ -18,41 +18,13 @@ if ($_SESSION['level'] != "admin") {
     
 }
 
-require "../config/register.php";
-
-if (isset($_POST['submit'])) {
-        
-    if (insert($_POST) > 0) {
-        
-        echo "
-            <script>
-                alert('Data berhasil ditambahkan!');
-                document.location.href='dashboard.php';
-            </script>
-        ";
-
-    }
-
-    else{
-
-        echo "
-            <script>
-                alert('Data Gagal ditambahkan!');
-                document.location.href='addmember.php';
-            </script>
-        ";
-
-    }
-
-}
-
 ?>
 
 <?php include "../admin-templates/header.php"; ?>
 
-<div class="pt-2 col-md-8">
+<div class="pt-2 col-md-8 mb-4">
     <h3>Form Add new member</h3>
-    <form action="" method="post">
+    <form action="../config/register.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id">
     <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
@@ -65,6 +37,13 @@ if (isset($_POST['submit'])) {
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" name="password" required autocomplete="off" id="exampleInputPassword1" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+        <label for="">Profile Picture</label>
+        <div class="custom-file">
+            <input type="file" name="foto" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">PNG atau JPG</label>
+        </div>
     </div>
     <div class="form-group">
         <label for="level">Level</label>

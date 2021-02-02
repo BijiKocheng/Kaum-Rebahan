@@ -68,7 +68,7 @@ $no = 1;
                 <td><?= $data['nama']; ?></td>
                 <td><?= $data['episode']; ?></td>
                 <td>
-                    <a href="#" class="btn btn-success">Details</a>
+                    <a href="comicDetail.php?slug=<?= $data['slug']; ?>" class="btn btn-success">Details</a>
                     <a href="edit.php?id=<?= $data['id']; ?>" class="btn btn-primary">Edit</a>
                     <a href="../config/delete.php?id=<?= $data['id'];?>" class="btn btn-danger">Delete</a>
                 </td>
