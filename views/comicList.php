@@ -1,45 +1,30 @@
 <?php 
 
+require "../config/connectiontoP3.php";
+
 session_start();
 
 if (!isset($_SESSION['email'])) {
-    echo "<script>
-        alert('harap login terlebih dahulu');
-        window.location.href='login.php';
-      </script>";
+
+  echo "<script>
+      alert('harap login terlebih dahulu');
+      window.location.href='login.php';
+    </script>";
+
 }
 
 if ($_SESSION['level'] != "admin") {
 
-    echo "<script>
-    alert('Anda bukan admin');
-    window.location.href='index.php';
-    </script>";
-    
-  }
-
-require "../config/connectiontoP3.php";
-
-$sql = "SELECT * FROM users";
-$query = mysqli_query($conn2, $sql);
-$no = 1;
-
-?>
-
-<?php 
-
-if (isset($_POST['search_submit'])) {
-
-$search = $_POST['search'];
-$query = mysqli_query($conn2, "SELECT * FROM users where
-        username like '%$search%' OR
-        email like '%$search%' OR
-        password like '%$search%' OR
-        level like '%$search%'");
-
+  echo "<script>
+  alert('Anda bukan admin');
+  window.location.href='index.php';
+  </script>";
+  
 }
 
-
+$sql = "SELECT * FROM comics";
+$query = mysqli_query($conn2, $sql);
+$no = 1;
 
 ?>
 
@@ -49,7 +34,7 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
     <div class="col-12">
     <div class="card">
         <div class="card-header">
-        <h3 class="card-title">Data Table User</h3>
+        <h3 class="card-title">Data Table Comics</h3>
 
         <div class="card-tools">
             <form action="" method="post" class="form-inline my-2 my-lg-0">
@@ -66,9 +51,9 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
             <tr>
                 <th>No</th>
                 <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Level</th>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Episode</th>
                 <th>Option</th>
             </tr>
             </thead>
@@ -77,10 +62,13 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
             <tr>
                 <td><?= $no; ?></td>
                 <td><?= $data['id']; ?></td>
-                <td><?= $data['username']; ?></td>
-                <td><?= $data['email']; ?></td>
-                <td><b><?= $data['level']; ?></b></td>
                 <td>
+                    <img style="width: 50px;" class="img-fluid" src="../assets/img/comics/<?= $data['foto']; ?>" alt="">
+                </td>
+                <td><?= $data['nama']; ?></td>
+                <td><?= $data['episode']; ?></td>
+                <td>
+                    <a href="#" class="btn btn-success">Details</a>
                     <a href="edit.php?id=<?= $data['id']; ?>" class="btn btn-primary">Edit</a>
                     <a href="../config/delete.php?id=<?= $data['id'];?>" class="btn btn-danger">Delete</a>
                 </td>
@@ -93,7 +81,7 @@ $query = mysqli_query($conn2, "SELECT * FROM users where
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
-    </div>
+    </div>  
 </div>
 
 <div class="row">
