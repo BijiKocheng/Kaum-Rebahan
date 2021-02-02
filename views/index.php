@@ -23,6 +23,7 @@
   <h1 class="display-4">Hello, <?= $_SESSION['username']; ?>!</h1>
   <hr class="my-4">
   <p><?php print_r($_SESSION);   ?></p>
+  <img src="../assets/img/users/<?= $_SESSION['photo']; ?>" class="mb-2" alt="">
   <p class="lead">
     <a class="btn btn-danger btn-lg" href="../config/logout.php" role="button">logout</a>
     <?php if($_SESSION['level'] == 'admin') : ?>
