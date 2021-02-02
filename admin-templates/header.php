@@ -89,7 +89,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header">Admin Menu</li>
-          <li class="nav-item">
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>
@@ -112,7 +112,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
+
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>
@@ -131,6 +132,30 @@
                 <a href="../views/listmember.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Member List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+              <p>
+                Comic
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../views/comicAdd.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Comic</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../views/comicsList.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Comics List</p>
                 </a>
               </li>
             </ul>
