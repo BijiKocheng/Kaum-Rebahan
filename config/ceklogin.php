@@ -17,6 +17,7 @@
         $_SESSION['username'] = $row['username'];
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
+        $_SESSION['photo'] = $row['foto'];
         $_SESSION['level'] = $row['level'];
         header('location:../views/index.php');
         }

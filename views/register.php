@@ -9,28 +9,6 @@ if (isset($_SESSION['email'])){
         </script>";
 }
 
-require "../config/cekregister.php";
-
-if (isset($_POST['submit'])) {
-  
-  if (insert($_POST) > 0) {
-    echo "
-            <script>
-                alert('Akun Berhasil Dibuat!');
-                document.location.href='login.php';
-            </script>
-        ";
-  }
-  else{
-    echo "
-            <script>
-                alert('Akun Gagal Dibuat!');
-                document.location.href='register.php';
-            </script>
-        ";
-  }
-
-}
 
 ?>
 
@@ -61,7 +39,7 @@ if (isset($_POST['submit'])) {
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="" method="post">
+      <form action="../config/cekregister.php" method="post" enctype="multipart/form-data">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="username" autofocus autocomplete="off" required placeholder="Enter Username">
           <div class="input-group-append">
@@ -85,6 +63,12 @@ if (isset($_POST['submit'])) {
               <span class="fas fa-lock"></span>
             </div>
           </div>
+        </div>
+        <div class="input-group mb-3">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="photo" id="customFile">
+          <label class="custom-file-label text-muted" for="customFile">Profile Picture</label>
+        </div>
         </div>
         <div class="row">
           <div class="col-8">
